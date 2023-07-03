@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Page</title>
-    <link rel="icon" type="image/x-icon" href="../Assets/img/Logoimage.png.png">
-    <link rel="stylesheet" href="../Assets/css/style.css">
-    <link rel="stylesheet" href="../Assets/css/navbar.css">
-    <link rel="stylesheet" href="../Assets/fontawesome/css/all.css ">
-    <link rel="stylesheet" href="../Assets/fontawesome/css/fontawesome.min.css
-      ">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../Assets/css/responsive.css">
-    <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../Assets/css/owl.theme.default.min.css">
-  </head>
-  <body>
+{%extends 'siteflow/index.html'%}
+{% load static %}
+{%block title%}Temple{%endblock%}
+{%block content %}
+{%include 'siteflow/header.html'%}
+
     <section class="container-fluid p-0">
       <div class="topnav d-flex justify-content-between fixed-top">
         <div>
@@ -232,115 +215,6 @@
       </div>
     </section>
 
-    <section class="container-fluid p-0">
-      <footer class="foot border-0 mt-4">
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12 col-12 ps-4">
-            <h5 class="footer-content">About us</h5>
-            <p class="aboutus-review">
-              you need to be sure there isn`t anything embarrsing hidden in the
-              middle of the text,
-            </p>
-            <div>
-              <i class="fal fa-phone-volume"></i><span class="aboutus-content
-                px-2">63463674056</span>
-            </div>
-            <div>
-              <i class="fal fa-phone-alt"></i><span class="aboutus-content
-                px-2">kkasx@gmail.com</span>
-            </div>
-            <div>
-              <i class="fal fa-phone-alt"></i><span class="aboutus-content
-                px-2">Address</span>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-3 col-sm-4 col-12 ps-4">
-            <h5 class="footer-content">Information</h5>
-            <p class="informationcontact">Pooja</p>
-            <p class="informationcontact">Service</p>
-            <p class="informationcontact">Temple</p>
-            <p class="informationcontact">Donation</p>
-          </div>
+  {% include 'siteflow/footer.html' %}
 
-          <div class="col-lg-4 col-md-5 col-sm-8 col-12 ps-4">
-            <h5 class="footer-content">recent festivals</h5>
-            <div class="d-flex">
-              <img
-                src="../Assets/img/Image 12.png"
-                alt=""
-                class="img-footer"
-                width="60"
-                height="50"
-                />
-              <div class="ps-2">
-                <i class="fal fa-phone-alt mt-3 px-2"></i><span class="date
-                  mt-2">Mar 02 2023</span>
-                <p class="descript">
-                  Temple companies are belong to transparent with their work
-                </p>
-              </div>
-            </div>
-            <div class="d-flex mt-2">
-              <img
-                src="../Assets/img/Image 12.png"
-                alt=""
-                class="img-footer"
-                width="60"
-                height="50"
-                />
-              <div class="ps-2">
-                <i class="fal fa-phone-alt mt-3 px-2"></i><span class="date
-                  mt-2">Mar 02 2023</span>
-                <p class="descript">
-                  Temple companies are belong to transparent with their work
-                </p>
-              </div>
-            </div>
-            <div class="d-flex mt-2 mb-2">
-              <img
-                src="../Assets/img/Image 12.png"
-                alt=""
-                class="img-footer"
-                width="60"
-                height="50"
-                />
-              <div class="ps-2">
-                <i class="fal fa-phone-alt mt-3 px-2"></i><span class="date
-                  mt-2">Mar 02 2023</span>
-                <p class="descript">
-                  Temple companies are belong to transparent with their work
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex justify-content-between copyright ms-2 p-0">
-          <div class="mt-3">
-            <span class="px-2"> @Copyright temple-2023</span>
-          </div>
-          <div>
-            <img
-              src="../Assets/img/Logoimage.png.png"
-              alt="Logo-image"
-              class="Logo-image mt-2"
-              id="logo-img"
-              width="40px"
-              height="40px"
-              />
-          </div>
-          <div class="d-flex justify-content-between mt-3">
-            <div><i class="fab fa-facebook icons fa-lg px-2"></i></div>
-            <div><i class="fas fa-envelope icons fa-lg px-2"></i></div>
-            <div><i class="fab fa-youtube icons fa-lg px-2"></i></div>
-          </div>
-        </div>
-      </footer>
-    </section>
-
-    <script src="../Assets/js/jquery-3.6.0.min.js"></script>
-    <script src="../Assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../Assets/js/owl.carousel.min.js"></script>
-    <script src="../Assets/js/script.js"></script>
-  </body>
-</html>
+   {% endblock %}
