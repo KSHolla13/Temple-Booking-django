@@ -1,0 +1,63 @@
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .imagee{
+        position: absolute;
+        bottom: 250px !important;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    .imagee{
+        position: absolute;
+        bottom: 310px !important;
+    }
+    .nav-item{
+        margin: 0px !important;
+    }
+    .second-container{
+        margin-top: 156px !important;
+    }
+}
+@media (max-width: 768px) and (min-width: 576px) {
+    .imagee{
+        position: absolute;
+        align-content: center;
+        bottom: 360px !important;
+    }
+    .donation-page {
+        margin-top: 100px !important;
+    }
+    .nav-item{
+        margin: 0px !important;
+    }
+    .second-container{
+        margin-top: 156px !important;
+    }
+    .Book{
+        width: 150px;
+    }
+}
+@media (max-width: 576px) and (min-width: 320px) {
+    .imagee{
+        display: none;
+    }
+    .donation{
+        margin-top: 20px !important;
+    }
+    .donation-page {
+        margin-top: 10px !important;
+    }
+    .topnav{
+        height: 100px !important;
+    }
+    .logo{
+        font-size: 20px;
+    }
+    .nav-item{
+    margin: 0px !important;
+    }
+    .second-container{
+        margin-top: 156px !important;
+    }
+}
+

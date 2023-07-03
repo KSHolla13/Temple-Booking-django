@@ -1,0 +1,598 @@
+.main-1 {
+  height: auto;
+  background: rgba(248, 175, 8, 0.11);
+}
+.second-container {
+  margin-top: 105px !important;
+}
+.lordname,
+.f-head {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 46px;
+  color: #000000;
+}
+.name-header {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 46px;
+  color: #000000;
+}
+.description,
+.templediscription {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 37px;
+  color: #000000;
+}
+/* owl carousel */
+.owl-nav button {
+  position: absolute;
+  top: 50%;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+.owl-nav button.owl-prev {
+  left: 0;
+  margin-left: 17px;
+}
+.owl-nav button.owl-next {
+  right: -20px;
+}
+
+.owl-dots button.owl-dot:focus {
+  outline: none;
+}
+.owl-nav button {
+  position: absolute;
+  top: 50%;
+  font-size: 20px !important;
+  transform: translateX(-50%);
+  border-radius: 50px !important;
+  width: 35px !important;
+  height: 35px !important;
+  background: #ffffff !important;
+  border: 1px solid #f0f0f0 !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+.owl-nav button:focus {
+  outline: none;
+}
+/* owl carousel */
+.simplecard {
+  width: 550px;
+  height: 476px;
+  border: 2px solid #000000 !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+.viewmore {
+  text-decoration: underline;
+  font: normal normal 600 25px/34px Open Sans;
+  letter-spacing: 0px;
+  color: #ff0000;
+  opacity: 1;
+}
+.rotatecard {
+  position: relative;
+  margin-top: 50px;
+  width: 300px;
+  height: 250px;
+  background-color: #ffe19d !important;
+}
+.darshantimings {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 46px;
+  color: #000000;
+}
+.dashantime {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  color: #000000;
+}
+/* //footer// */
+.foot {
+  background: #ffffff;
+  border: 1px solid #d2d2d2;
+  opacity: 1;
+}
+.copyright {
+  height: 60px;
+  background-color: #f8af089e;
+}
+.footer-content {
+  font-family: "Tienne";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 43px;
+  text-decoration-line: underline;
+  color: #000000;
+}
+.aboutus-review {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+}
+.aboutus-content {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(53, 53, 53, 0.8);
+}
+.informationcontact,
+.date {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+/* //footer// */
+.donation {
+  position: relative;
+  height: auto;
+  margin-top: 140px;
+  padding-bottom: 10px;
+  background: rgba(248, 175, 8, 0.3);
+}
+.Donate {
+  width: 200px;
+  height: 60px;
+  background: #ffba19;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  border-radius: 10px;
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 37px;
+  color: #000000;
+}
+.Darshana {
+  width: auto;
+  height: 300px;
+  background-image: url("../img/Artboard\ 1.png");
+}
+.venue-slider {
+  width: 340px;
+  height: auto;
+  border: 1px solid #ffe19d;
+  border-radius: 30px !important;
+}
+.card-images {
+  width: 322px;
+  height: 207px;
+  border-radius: 20px !important;
+}
+.venue-title {
+  display: table;
+  border-bottom: 1px solid #ffba19;
+}
+.discript {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #646161;
+}
+.bookbutton {
+  width: 144px !important;
+  height: 43px !important ;
+  background: #ffe19d !important;
+  border-radius: 10px !important;
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px !important;
+  line-height: 30px;
+  color: #000000;
+}
+.festivals {
+  background-color: #ffe19d;
+  /* width: calc(50% -50px);
+    height: 100%;
+    background-color: #FFBA19;*/
+}
+.festival-name {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 41px;
+  color: #000000;
+}
+.descriptions,
+.donation-description {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  color: #000000;
+}
+.donation-header {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 37px;
+  color: #000000;
+}
+.descript {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #000000;
+}
+.img-footer {
+  width: 84px;
+  height: 64px;
+  border-radius: 5px !important;
+}
+.imagee {
+  position: absolute;
+  bottom: 210px !important;
+}
+.festival-card,
+.festival-img {
+  width: 310px;
+  height: 277px;
+  border-radius: 30px;
+}
+.rotatecard.about-img-1 {
+  position: relative;
+  width: 223px;
+  height: 183px;
+  border: 3px solid #ffe19d !important;
+}
+.rotatecard.flipcard {
+  position: absolute;
+}
+.lordname-card {
+  position: relative;
+  width: 550px;
+  height: 500px;
+  border: 2px solid black;
+}
+.lordname-card.lordname-img {
+  width: 550px;
+  height: 500px;
+  margin-top: 30px !important;
+}
+.video-card {
+  height: auto;
+  background-color: black;
+}
+.loopvideo {
+  opacity: 20%;
+}
+.title-header {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 55px;
+  color: #ffba19;
+}
+.text-header {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 37px;
+  color: #ffefc9;
+}
+.readmore {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 46px;
+  text-decoration-line: underline;
+  color: #ffba19 !important;
+}
+.header-overlay {
+  margin-left: 106px;
+  margin-top: 180px;
+}
+
+/* Nityasevapage */
+.pageheader {
+  font: normal normal bold 40px/55px Open Sans !important;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.pageheadertxt {
+  font: normal normal bold 20px/27px Open Sans;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 1;
+}
+.nav-pills {
+  width: auto;
+  height: 129px;
+  background: #ffffff 0% 0% no-repeat padding-box !important;
+  box-shadow: 4px 4px 12px #00000029 !important;
+  border-radius: 20px;
+  opacity: 1;
+  justify-content: space-evenly !important;
+}
+.tabs.active {
+  width: 347px;
+  height: 87px;
+  background: #ffcb52 0% 0% no-repeat padding-box !important;
+  border-radius: 20px !important;
+  font: normal normal bold 40px/55px Open Sans !important;
+  letter-spacing: 0px !important;
+  color: #191210 !important;
+  opacity: 1 !important;
+}
+.nityasevacard {
+  height: auto;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 3px 3px 10px #00000029;
+  border-radius: 20px !important;
+  opacity: 1;
+}
+.pujaname {
+  font: normal normal bold 25px/34px Open Sans;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.pujaprice {
+  font: normal normal 600 25px/34px Open Sans;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.Book,
+.Booknow {
+  width: 209px;
+  height: 64px;
+  background: #ffcb52 0% 0% no-repeat padding-box !important;
+  box-shadow: 0px 3px 10px #00000029;
+  border: 1px solid #ffcb52 !important;
+  border-radius: 15px !important;
+  font: normal normal bold 26px/36px Open Sans !important;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.navbar-toggler {
+  float: right !important;
+}
+/* Nityasevapage */
+
+/* bookviewpage */
+.pageheader.text {
+  color: #707070 !important;
+}
+.typeofpuja,
+.importance {
+  font: normal normal bold 30px/41px Open Sans;
+  letter-spacing: 0px;
+  color: #ffcb52;
+  opacity: 1;
+}
+.typeofpuja {
+  text-decoration: underline;
+}
+.typeofpuja-description,
+.importance-text {
+  font: normal normal normal 20px/27px Open Sans;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.booking-information {
+  font: normal normal normal 40px/55px Open Sans;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.form-control {
+  height: 53px !important;
+  background: #707070 0% 0% no-repeat padding-box !important;
+  border: 1px solid #707070 !important;
+  border-radius: 10px !important;
+  color: white !important;
+  opacity: 0.5;
+}
+.form-control::placeholder {
+  font: normal normal normal 20px/27px Open Sans !important;
+  letter-spacing: 0px;
+  color: #000000 !important;
+  opacity: 0.9;
+}
+/* bookviewpage */
+
+/* Loginpage */
+.login .form-control,.password .form-control {
+  border: none !important;
+}
+.form-control{
+    background-color: #f4f3f3 !important;
+}
+.login-header {
+  font: normal normal bold 35px/49px Open Sans;
+  letter-spacing: 0.6px;
+  color: #0c0c0c;
+  opacity: 1;
+} 
+  
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: rgb(252, 247, 247)
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffba19;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.remember,
+.forgetpassword,
+.signin {
+  font: normal normal normal 22px/30px Open Sans;
+  letter-spacing: 0px;
+  color: #ffba19;
+  opacity: 1;
+}
+.sign-in {
+  width: 582px !important;
+  height: 57px !important;
+  background: #ffba19 0% 0% no-repeat padding-box !important;
+  border-radius: 28px !important;
+  font: normal normal bold 25px/49px Open Sans !important;
+  letter-spacing: 0.4px !important;
+  color: #ffffff !important;
+  cursor: pointer;
+  opacity: 1;
+}
+.sign-in:hover{
+    background-color: #e17a0d !important;
+    color: rgb(248, 248, 250) !important;
+}
+.Login-img {
+  opacity: 1;
+  filter: brightness(100%);
+}
+/* .Login-img:hover {
+  opacity: 0.9;
+  filter: brightness(50%);
+} */
+.form-control:focus {
+  background-color: white !important;
+  color: black !important;
+  border: none !important;
+}
+input[type="checkbox"]:checked + span {
+  color: rgb(112, 70, 218);
+}
+.forgetpassword:active,.forgetpassword:hover{
+    color: #f20a0a !important;
+}
+/* login page */
+/* register page */
+.madtext {
+  font: normal normal normal 14px Open Sans;
+  letter-spacing: 0px;
+  color: #949494;
+}
+.account {
+  font: normal normal medium 14px/24px Dubai;
+  letter-spacing: 0.28px;
+  color: #050605a6;
+  opacity: 1;
+}
+/* register page */
+/* bookingpage */
+.booking-card {
+  width: auto;
+  height: auto;
+  background: #fcfcfc 0% 0% no-repeat padding-box !important;
+  box-shadow: 0px 3px 6px #00000029 !important;
+  border: 1px solid #d1d1d1 !important;
+  border-radius: 20px !important;
+  opacity: 1;
+}
+.page-head {
+  font: normal normal bold 26px/36px Open Sans;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.table-header {
+  height: 50px;
+  background: #ffba19 0% 0% no-repeat padding-box;
+  border: 1px solid #f8ecc5;
+  opacity: 1;
+}
+tr th {
+  font: normal normal normal 16px/22px Open Sans;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+tr td {
+  font: normal normal normal 16px/22px Open Sans;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}

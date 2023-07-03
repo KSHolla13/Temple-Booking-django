@@ -1,0 +1,37 @@
+.topnav{
+  height: 65px !important;
+  background: #FFBA19 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+.logo{
+  font-family:Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 28px;
+line-height: 45px;
+color: #141313;
+}
+.make-nav{
+  display: contents !important;
+}
+.nav-link{
+  font-family: Arial, Helvetica, sans-serif;
+font-style: normal !important;
+font-weight: 400 !important;
+font-size: 20px !important;
+line-height: 41px !important;
+color: #000000 !important;
+}
+.nav-item{
+  margin: 20px !important;
+}
+.navbar{
+  background: 
+  rgb(247, 207, 116)!important;
+  opacity: 1;
+  z-index: 10;
+}
+.fixed-top-2 {
+  margin-top: 65px;
+  height: 40px;
+}

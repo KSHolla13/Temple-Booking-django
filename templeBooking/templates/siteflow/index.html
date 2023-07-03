@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'siteflow/img/Logoimage.png.png'%}">
+    <link rel="stylesheet" href="{% static 'siteflow/css/style.css'%}" />
+    <link rel="stylesheet" href="{% static 'siteflow/css/navbar.css'%}" />
+    <link rel="stylesheet" href="{% static 'siteflow/fontawesome/css/all.css'%} " />
+    <link rel="stylesheet" href="{% static 'siteflow/fontawesome/css/fontawesome.min.css'%}"  />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'%}"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      />
+    <link rel="stylesheet" href="{% static 'siteflow/css/responsive.css'%}" />
+    <link rel="stylesheet" href="{% static 'siteflow/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'siteflow/css/owl.carousel.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'siteflow/css/owl.theme.default.min.css'%}" />
+  </head>
+  <body>
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'siteflow/js/jquery-3.6.0.min.js'%}"></script>
+    <script src="{% static 'siteflow/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'siteflow/js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'siteflow/js/script.js'%}"></script>
+
+  </body>
+ </html>  

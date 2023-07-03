@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
+    'siteflow',
+    'customer',
 ]
 
 MIDDLEWARE = [
@@ -47,14 +51,31 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+
+
+INTERNAL_IPS = [                                               # <-- NEW
+    '127.0.0.1',                                               # <-- NEW
+]  
+def show_toolbar(request):                                     # <-- NEW
+    return True                                                # <-- NEW
+    
+DEBUG_TOOLBAR_CONFIG = {                                       # <-- NEW
+    "SHOW_TOOLBAR_CALLBACK" : show_toolbar,                    # <-- NEW
+}                                                              # <-- NEW
+
+if DEBUG:                                                      # <-- NEW
+    import mimetypes                                           # <-- NEW          
+    mimetypes.add_type("application/javascript", ".js", True)
+
 
 ROOT_URLCONF = 'templeBooking.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/"templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,9 +136,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+STATICFILES_DIRS  = [
+        os.path.join(BASE_DIR,'staticfiles/'),
+    ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+SESSION_SAVE_EVERY_REQUEST = True
