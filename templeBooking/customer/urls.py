@@ -5,6 +5,8 @@ from siteflow.models import *
      
 urlpatterns = [
     
-    
+    path("login",views.clogin.as_view(),name="login"),
+    path("registration",views.cregister.as_view(),name="registration"),
+    path("dashboard",views.dashboard.as_view(),name="dashboard"),
 
 ]
