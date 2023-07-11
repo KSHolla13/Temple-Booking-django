@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+      'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,7 +60,7 @@ INTERNAL_IPS = [                                               # <-- NEW
     '127.0.0.1',                                               # <-- NEW
 ]  
 def show_toolbar(request):                                     # <-- NEW
-    return True                                                # <-- NEW
+    return False                                                # <-- NEW
     
 DEBUG_TOOLBAR_CONFIG = {                                       # <-- NEW
     "SHOW_TOOLBAR_CALLBACK" : show_toolbar,                    # <-- NEW

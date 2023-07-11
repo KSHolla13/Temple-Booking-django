@@ -36,6 +36,7 @@ class sevas_table(models.Model):
  
 
 class booking_table(models.Model):
+    booking_id=models.CharField(max_length=100,null=True,blank=True)
     seva=models.ForeignKey(sevas_table,on_delete=models.CASCADE,null=True,blank=True)
     user=models.ForeignKey(user_table,on_delete=models.CASCADE,null=True,blank=True)
     name=models.CharField(max_length=200,null=True,blank=True)
@@ -44,6 +45,8 @@ class booking_table(models.Model):
     nakshatra=models.CharField(max_length=200,null=True,blank=True)
     date=models.DateField(max_length=10,null=True,blank=True)
     status=models.CharField(max_length=100,null=True,blank=True)
+    razorpay_orderid=models.CharField(null=True,blank=True,max_length=100)
+    payment=models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True,null=True, blank=True)
     updated = models.DateTimeField(auto_now=True,null=True, blank=True)
 

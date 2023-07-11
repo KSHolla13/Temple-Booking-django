@@ -8,6 +8,14 @@
 
     <section class="container second-container p-0">
       <div class="pt-4 ">
+        {% if messages  %}
+        {%for message in messages%}
+        
+    <div class="alert alert-{% if message.tags == "success"%}success {% else %}warning {%endif%} mt-2 pt-2" role="alert">
+        {{message}}
+       </div>
+        {%endfor%}
+        {%endif%} 
         <h1 class="pageheader ms-2">Puja is offering to God, prathana is
           demanding from God....</h1>
         <p class="pageheadertxt text-center ms-2 mt-4">Puja, also spelled pooja or poojah,

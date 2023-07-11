@@ -32,27 +32,47 @@
           <div class="tab-pane fade show active mt-2" id="pills-home"
             role="tabpanel" aria-labelledby="pills-home-tab">
             <div class="conatiner p-0 mt-4">
+              {% if messages  %}
+              {%for message in messages%}
+              
+          <div class="alert alert-{% if message.tags == "success"%}success {% else %}warning {%endif%} mt-2 pt-2" role="alert">
+              {{message}}
+             </div>
+              {%endfor%}
+              {%endif%} 
               <table class="table table-borderless text-center"
                 style="overflow-x:auto;">
                 <thead>
                   <tr class="table-header align-content-center">
                     <th scope="col">SL.NO</th>
+                    <th scope="col">Booking Id</th>
                     <th scope="col">Seva</th>
                     <th scope="col">Price</th>
                     <th scope="col">Booking date</th>
                     <th scope="col">Seva Date</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Payment</th>
                   </tr>
                 </thead>
                 <tbody>
                   {% for b in bookings %}
                   <tr>
-                    <th scope="row">{{b.id}}</th>
+                    <th scope="row">{{forloop.counter}}</th>
+                    {%if b.booking_id%}
+                    <th scope="row">{{b.booking_id}}</th>
+                    {%else%}
+                    <th scope="row">-</th>
+                    {%endif%}
                     <td>{{b.seva.seva_name}}</td>
                     <td>&#8377 {{b.seva.amount}}</td>
                     <td>{{b.created}}</td>
                     <td>{{b.date}}</td>
                     <td>{{b.status}}</td>
+                    {%if b.payment%}
+                    <td class="alert alert-success">Paid</td>
+                    {%else%}
+                    <td class="alert alert-error">Not Paid</td>
+                    {%endif%}
                   </tr>
                   {% endfor %}
                 </tbody>

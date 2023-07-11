@@ -43,9 +43,10 @@
     <section class="container p-0">
       <div class="card border-0">
         <div class="card-body">
-          <form method="post">
+          <form method="post" id="registerform" action="javascript:void(0);">
             {% csrf_token %}
             <input id="idd" name="idd" value="{{Seva.id}}" hidden>
+            <input id="action" name="action" value="request" hidden>
             <div class="row">
               <div class="col-6">
                 <div class="input-group mb-3">
@@ -80,7 +81,7 @@
             <div class="row">
               <div class="col-6">
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Pincode"
                   name="pincode"
                   class="form-control"
@@ -91,42 +92,83 @@
             <div class="mt-3 pt-4 pl-2 ml-2"><h3>Amount : {{Seva.amount}} Rs</h3></div>
             <div class="pt-4">
               <a href="#"
-                ><button type="button submit" class="btn rzp-button Booknow">
+                ><button type="button submit" class="btn  Booknow">
                   Book Now
                 </button></a>
+                
             </div>
           </form>
+          
         </div>
       </div>
     </section>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
-    var options = {
-        "key": "{{ razorpay_key }}",  // Replace with your Razorpay API key
-        "amount": "{{ amount }}",  // Replace with the amount in paise
-        "currency": "INR",  // Currency code
-        "name": "Your Company Name",
-        "description": "Payment",
-        "order_id": "{{ order_id }}",  // Razorpay order ID passed from the view
-        "handler": function (response) {
-            // Handle the success response from Razorpay
-            // You can perform further actions here, such as updating your database
-            console.log(response);
+      $('#registerform').submit(function (event) {
+        event.preventDefault(); 
+        var formData = $(this).serialize();
+        $.ajax({
+          type: 'POST',
+           data: formData,
+           success: function(response){
+            
+            if (response["status"]){
+              var options = {
+                key: response["razorpay_key"],
+                amount: response["amount"], 
+                currency: "INR",
+                //name: "{{order.name}}",
+                description: "Test Transaction",
+                //image: "https://example.com/your_logo",
+                order_id: response["order_id"],
+                callback_url: response["callback_url"],
+                redirect: true,
+                prefill: {
+                    "name": response["name"],
+                    
+                },
+                notes: {
+                    "address": response["address"]+" "+response["pincode"]
+                },
+                theme: {
+                    "color": "#3399cc"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+            }
+           }
+        })
+
+      })
+  $(".rzp-button").click(function(){
+
+  alert()
+      var options = {
+        key: "{{razorpay_key}}",
+        amount: "{{order.amount}}", 
+        currency: "INR",
+        name: "{{order.name}}",
+        description: "Test Transaction",
+        image: "https://example.com/your_logo",
+        order_id: "{{order.provider_order_id}}",
+        callback_url: "{{callback_url}}",
+        redirect: true,
+        prefill: {
+            "name": "Gaurav Kumar",
+            "email": "gaurav.kumar@example.com",
+            "contact": "9999999999"
         },
-        "prefill": {
-            "name": "John Doe",  // Prefill customer name if needed
-            "email": "john@example.com"  // Prefill customer email if needed
+        notes: {
+            "address": "Razorpay Corporate Office"
+        },
+        theme: {
+            "color": "#3399cc"
         }
     };
     var rzp1 = new Razorpay(options);
-    rzp1.on('payment.failed', function (response) {
-        // Handle the failed payment response from Razorpay
-        console.log(response.error.description);
-    });
-    document.getElementsByClassName('rzp-button').onclick = function(e){
-        rzp1.open();
-        e.preventDefault();
-    }
+    rzp1.open();
+  })
 </script>
 
     {% include 'siteflow/footer.html' %}

@@ -7,6 +7,13 @@
 
     <section class="container p-0 mt-5">
       <div class="second-container">
+        {%if messages%}
+        {%for message in messages%}
+        <div class="alert alert-success" id="alert" role="alert" >
+        {{message}}
+        </div>
+        {%endfor%}
+        {%endif%}
         <div class="card video-card bg-dark text-white border-0">
           <video autoplay loop>
             <source

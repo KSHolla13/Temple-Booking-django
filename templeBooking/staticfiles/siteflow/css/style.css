@@ -1,3 +1,11 @@
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 .main-1 {
   height: auto;
   background: rgba(248, 175, 8, 0.11);
@@ -428,7 +436,7 @@ a {
   background: #707070 0% 0% no-repeat padding-box !important;
   border: 1px solid #707070 !important;
   border-radius: 10px !important;
-  color: white !important;
+  /* color: white !important; */
   opacity: 0.5;
 }
 .form-control::placeholder {

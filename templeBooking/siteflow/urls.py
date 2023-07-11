@@ -4,7 +4,7 @@ from siteflow.models import *
 
      
 urlpatterns = [
-    
+    path('paymenthandler/<str:str>/<str:amount>/<str:booking_id>/<str:seva_id>',views.paymenthandler, name='paymenthandler'),
     path("",views.home.as_view(),name="home"),
     path("about-temple",views.aboutTemple.as_view(),name="about-temple"),
     path("calender",views.calender.as_view(),name="calender"),

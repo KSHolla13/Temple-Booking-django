@@ -41,7 +41,7 @@ class customerEmailThread(threading.Thread):
 class user_registration(View):
     template_name = 'customer/register.html'
     def get(self,request,*args,**kwargs):
-        print(request.session.get('otp'))
+        
         return render(request,self.template_name) 
     def post(self,request,*args,**kwargs):
         print(request.POST)
@@ -62,8 +62,7 @@ class user_registration(View):
                     request.session['phone'] = phone
                     request.session['fullname'] = fullname
                     request.session['password'] = make_password(password2)
-                    print(request.session)
-                    messages.success(request,"Enter the OTP")
+                    # messages.success(request,"Enter the OTP")
                     subject="Forgot Password OTP"
                     message=f"{otp} is your OTP, Don't share this otp with anyone"
                     customerEmailThread(subject,message,[email]).start()
@@ -144,66 +143,103 @@ class user_login(View):
            return redirect("login")
 
 
+# class userForgotPassword(View):
+#     template_name = 'customer/forgotPassword.html'
+#     def get(self,request,*args,**kwargs):  
+#         otp=request.session.get("forgototp")
+#         email=request.session.get("f_email")
+#         print(otp,email)
+#         return render(request,self.template_name)
+#     def post(self,request,*args,**kwargs):
+#         if request.POST.get("action")=="sendotp":
+#             print(request.POST)
+#             try:
+#                 email=request.POST.get("email")
+#                 user_table.objects.get(email=email)
+#                 otp = random.randint(1000,9999)
+#                 print(otp)
+#                 request.session['forgototp'] = otp
+#                 subject="Forgot Password OTP"
+#                 message=f"{otp} is your OTP, Don't share this otp with anyone"
+#                 customerEmailThread(subject,message,[email]).start()
+#                 messages.info(request,"otp sent to email")
+#                 return JsonResponse({"message":True})
+#             except Exception as e:
+#                 return JsonResponse({"message":False,"res":"Please Enter Valid Email id"})
+#         elif request.POST.get("action")=="verifyotp":
+#             print(request.POST)
+#             otp=request.POST.get("otp")
+#             email=request.POST.get("email")
+#             s_otp=request.session.get("forgototp")
+#             request.session['f_email']=email
+#             print(request.session.get('f_email'))
+
+#             print(s_otp,otp)
+#             if str(s_otp)==str(otp):
+#                 return JsonResponse({"message":True,"res":"OTP Verified"})
+#             else:
+#                 return JsonResponse({"message":False,"res":"Invalid OTP"})
+            
+#         elif request.POST.get("action")=="changepassword":    
+#             print(request.POST)        
+#             email=request.session.get('f_email')
+#             print(email)
+#             password1=request.POST.get("password1")
+#             password2=request.POST.get("password2")
+#             print(password2)
+#             if password1==password2:
+#                 user=user_table.objects.get(email=email)
+#                 user.password=make_password(password2)
+                
+#                 return JsonResponse({"message":True,"user":user})               
+#             else:
+#                 return JsonResponse({"message":False})
+
 class userForgotPassword(View):
-    template_name = 'customer/forgotPassword.html'
-    def get(self,request,*args,**kwargs):  
-        otp=request.session.get("forgototp")
-        email=request.session.get("f_email")
-        print(otp,email)
+    template_name="customer/forgotPassword.html"
+    def get(self,request,*args,**kwargs):
         return render(request,self.template_name)
     def post(self,request,*args,**kwargs):
-        if request.POST.get("action")=="sendotp":
-            print(request.POST)
-            try:
-                email=request.POST.get("email")
-                user_table.objects.get(email=email)
+        print(request.POST.get("email"))
+        email=request.POST.get("email")
+        user=user_table.objects.filter(email=email)
+        print("------------------",request.POST)
+        if user.exists():
+            action=request.POST.get("action")
+            if action=="send":
                 otp = random.randint(1000,9999)
-                print(otp)
-                request.session['forgototp'] = otp
-                subject="Forgot Password OTP"
-                message=f"{otp} is your OTP, Don't share this otp with anyone"
-                customerEmailThread(subject,message,[email]).start()
-                messages.info(request,"otp sent to email")
-                return JsonResponse({"message":True})
-            except Exception as e:
-                return JsonResponse({"message":False,"res":"Please Enter Valid Email id"})
-        elif request.POST.get("action")=="verifyotp":
-            print(request.POST)
-            otp=request.POST.get("otp")
-            email=request.POST.get("email")
-            s_otp=request.session.get("forgototp")
-            request.session['f_email']=email
-            print(request.session.get('f_email'))
-
-            print(s_otp,otp)
-            if str(s_otp)==str(otp):
-                return JsonResponse({"message":True,"res":"OTP Verified"})
-            else:
-                return JsonResponse({"message":False,"res":"Invalid OTP"})
-            
-        elif request.POST.get("action")=="changepassword":    
-            print(request.POST)        
-            email=request.session.get('f_email')
-            print(email)
-            password1=request.POST.get("password1")
-            password2=request.POST.get("password2")
-            print(password2)
-            if password1==password2:
-                user=user_table.objects.get(email=email)
-                user.password=make_password(password2)
-                
-                return JsonResponse({"message":True,"user":user})               
-            else:
-                return JsonResponse({"message":False})
-
-    
+                subject="Forgot OTP"
+                request.session['otp'] = otp
+                message=f"{otp} is your OTP for Forgot Password\n" 
+                customerEmailThread(subject, message, [email]).start()
+                return JsonResponse({"message":True,"message2":"OTP sent to your provided email address, Please don't refresh the page"})
+            elif action=="otp":
+                otp=request.POST.get("otp")
+                otp1=request.session.get("otp")
+                print("-----------",otp1)
+                if str(otp)==str(otp1):
+                    if otp1!=None:
+                        del request.session["otp"]
+                    return JsonResponse({"message":True,"message2":"OTP Verified, Please provide new password"})
+                else:
+                    return JsonResponse({"message":False,"message2":"Invalid OTP"})
+            elif action=="final":
+                password=request.POST.get("password")
+                password2=request.POST.get("cpassword")
+                if password==password2:
+                    user.update(password=make_password(password2))
+                    return JsonResponse({"message":True,"message2":"Password Changed Successfully"})
+                else:
+                    return JsonResponse({"message":False,"message2":"Password didn't match"})
+        else:
+            return JsonResponse({"message":False,"message2":"Account doesn't exists, check provided email address again"})    
 class dashboard(LoginRequiredMixin,View):
     template_name='customer/dashboard.html'
     def get(self,request,*args,**kwargs):
         bookings = booking_table.objects.select_related("seva").filter(user=request.user)
         user = request.user
         context={
-            'bookings':bookings,
+            'bookings':bookings[::-1],
             'user':user
         }
         return render(request,self.template_name,context)

@@ -15,10 +15,13 @@
                         mt-0">
                         <h3 class="login-header pb-3"><span class="pop-outin ">Login</span><span class="pop-outin "> here</span></h3>
                         {% if messages  %}
+                            {%for message in messages%}
                             
-                            <div><p class="backendmes" >{{messages}}</p></div>
-                            
-                            {%endif%}
+                        <div class="alert alert-{% if message.tags == "success"%}success {% else %}warning {%endif%} mt-2 pt-2" role="alert">
+                            {{message}}
+                           </div>
+                            {%endfor%}
+                            {%endif%} 
                         <div class="form-style">
                             
                             <form method="post">
@@ -44,17 +47,21 @@
                                 </div>
                                 <div class="d-flex align-items-center
                                     justify-content-between mt-3">
-                                    <div class="d-flex align-items-center">
-                                        <input name="" type="checkbox" value="checked" class='checkbox'>
-                                        <span class="pl-2 px-2 remember">
-                                            Remember
-                                            Me
-                                        </span>
-                                    </div>
+                               
+                                    
                                     <div>
                                         <a href="{% url 'forgotPassword' %}" class="forgetpassword">
                                             Forget
                                             Password?
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <div>
+
+                                    <p class="d-inline" >Already have an account?</p>
+                                        <a href="{% url 'registration' %}" class="forgetpassword">
+                                            Register
                                         </a>
                                     </div>
                                 </div>
