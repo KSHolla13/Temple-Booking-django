@@ -4,105 +4,7 @@
 {%block content %}
 {%include 'siteflow/header.html'%}
 
-    <section class="container-fluid p-0">
-      <div class="topnav d-flex justify-content-between fixed-top">
-        <div>
-          <img
-            src="../Assets/img/Rectangle 9.png"
-            class="img-fluid"
-            alt=""
-            width="160"
-            height="80"
-            />
-        </div>
-        <div
-          class="container-fluid d-flex justify-content-center align-item-center
-          mt-3 p-0">
-          <!-- <img src="../Assets/img/Logoimage.png.png" alt="Logo-image"
-              class="Logo-image img-fluid" width="70px" height="80px"/> -->
-          <h1 class="logo px-1">Hare Krishna Temple</h1>
-        </div>
-        <div>
-          <img
-            src="../Assets/img/Rectangle 9.png"
-            class="img-fluid"
-            alt=""
-            width="160"
-            height="80"
-            />
-        </div>
-      </div>
-      <div class="bottomnav">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top fixed-top-2">
-          <div class="container-fluid p-0">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle
-              navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Temple Calender</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    About temple
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Sevas
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="./Nityasevapage.html">Nitya Seva</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Maha Seva</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Gallery</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">E-hundi</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </section>
+    
 
     <section class="container second-container p-0">
       <div class="pt-4 ">
@@ -120,106 +22,68 @@
       <div class="mx-auto ">
       <ul class="nav nav-pills align-content-center" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active tabs " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Nitya Seve</button>
+          <button class="nav-link active tabs " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Nitya Seva</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link tabs" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Maha Seve</button>
+          <button class="nav-link tabs" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Maha Seva</button>
         </li>
       </ul>
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active mt-2" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          {% for n in n %}
           <div class="card  nityasevacard border-0 mt-lg-4">
             <div class="card-body align-items-center">
               <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
                   <div class="mt-4">
-                    <Span class="pujaname">Kumkumarchana puja</Span>
+                    <Span class="pujaname">{{n.seva_name}}</Span>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
                   <div class="mt-4">
-                    <Span class="pujaprice">&#8377 500</Span>
+                    <Span class="pujaprice">&#8377 {{n.amount}}</Span>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
                   <div class="mt-1">
-                    <a href="./Bookview.html" ><input type="button" class="Book" value="Book"/></a>
+                    <a href="{% url 'sevaDetails'  n.id %}" ><input type="button" class="Book" value="Book"/></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card  nityasevacard border-0 mt-lg-4 mt-md-4 mt-sm-4 mt-4">
-            <div class="card-body align-items-center">
-              <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
-                  <div class="mt-4">
-                    <Span class="pujaname">Bennealankara</Span>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
-                  <div class="mt-4">
-                    <Span class="pujaprice">&#8377 1551</Span>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
-                  <div class="mt-1">
-                    <a href="./Bookview.html" ><input type="button" class="Book" value="Book"/></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card  nityasevacard border-0 mt-lg-4 mt-md-4 mt-sm-4 mt-4">
-            <div class="card-body align-items-center">
-              <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
-                  <div class="mt-4">
-                    <Span class="pujaname">Prasada</Span>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
-                  <div class="mt-4">
-                    <Span class="pujaprice">&#8377 101</Span>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
-                  <div class="mt-1">
-                    <a href="./Bookview.html" ><input type="button" class="Book" value="Book"/></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card  nityasevacard border-0 mt-lg-4 mt-md-4 mt-sm-4 mt-4">
-            <div class="card-body align-items-center">
-              <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
-                  <div class="mt-4">
-                    <Span class="pujaname">Bennealankara</Span>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
-                  <div class="mt-4">
-                    <Span class="pujaprice">&#8377 1551</Span>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
-                  <div class="mt-1">
-                    <a href="./Bookview.html" ><input type="button" class="Book" value="Book"/></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
-        </div>
+        
         
         
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
+          {% for m in m %}
+          <div class="card  nityasevacard border-0 mt-lg-4">
+            <div class="card-body align-items-center">
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
+                  <div class="mt-4">
+                    <Span class="pujaname">{{m.seva_name}}</Span>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
+                  <div class="mt-4">
+                    <Span class="pujaprice">&#8377 {{m.amount}}</Span>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">
+                  <div class="mt-1">
+                    <a href="{% url 'sevaDetails' m.id %}" ><input type="button" class="Book" value="Book"/></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
         </div>
       </div>
+    </div>
     
     </section>
 

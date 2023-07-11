@@ -4,105 +4,7 @@
 {%block content %}
 {%include 'siteflow/header.html'%}
 
-    <section class="container-fluid p-0">
-      <div class="topnav d-flex justify-content-between fixed-top">
-        <div>
-          <img
-            src="../Assets/img/Rectangle 9.png"
-            class="img-fluid"
-            alt=""
-            width="160"
-            height="80"
-            />
-        </div>
-        <div
-          class="container-fluid d-flex justify-content-center align-item-center
-          mt-3 p-0">
-          <!-- <img src="../Assets/img/Logoimage.png.png" alt="Logo-image"
-              class="Logo-image img-fluid" width="70px" height="80px"/> -->
-          <h1 class="logo px-1">Hare Krishna Temple</h1>
-        </div>
-        <div>
-          <img
-            src="../Assets/img/Rectangle 9.png"
-            class="img-fluid"
-            alt=""
-            width="160"
-            height="80"
-            />
-        </div>
-      </div>
-      <div class="bottomnav">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top fixed-top-2">
-          <div class="container-fluid p-0">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle
-              navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Temple Calender</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    About temple
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Sevas
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="./Nityasevapage.html">Nitya Seva</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Maha Seva</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Gallery</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">E-hundi</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </section>
+    
 
     <section class="container second-container p-0 pt-4">
       <div class="mx-auto ">
@@ -143,27 +45,21 @@
                   </tr>
                 </thead>
                 <tbody>
+                  {% for b in bookings %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>NityaSeva</td>
-                    <td>&#8377 1500</td>
-                    <td>22/12/2023</td>
-                    <td>30/12/2023</td>
-                    <td>Booked</td>
+                    <th scope="row">{{b.id}}</th>
+                    <td>{{b.seva.seva_name}}</td>
+                    <td>&#8377 {{b.seva.amount}}</td>
+                    <td>{{b.created}}</td>
+                    <td>{{b.date}}</td>
+                    <td>{{b.status}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>MahaSeva</td>
-                    <td>&#8377 2500</td>
-                    <td>1/1/2024</td>
-                    <td>10/1/2024</td>
-                    <td>Not Booked</td>
-                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
             </div>
           </div>
-        </div>
+        
 
 
         <div class="tab-pane fade" id="pills-profile" role="tabpanel"
@@ -182,21 +78,14 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>NityaSeva</td>
-                  <td>22/12/2023</td>
-                  <td>&#8377 1500</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>MahaSeva</td>
-                  <td>1/1/2024</td>
-                  <td>&#8377 2500</td>
+                  <th scope="row"></th>
+                  <td><h3>No donations yet</h3></td>
+                  <td></td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
           </div>
-
         </div>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel"
           aria-labelledby="pills-contact-tab">
@@ -204,11 +93,16 @@
             <div class="card-body booikg-card-body">
               <div>
                 <center class="page-head">Personal information</center>
-                <center><img src="../Assets/img/Image 12.png"
+                <center><img src="{% static '/siteflow/img/Image 12.png'%}"
                     alt="profile-image" width="121" height="121"
                     class="rounded-pill mt-4"></center>
-              </div>
-              
+                    <center class="">Name : {{user.name}}</center>
+                    <center class="">Email : {{user.email}}</center>
+                    <center class="">Phone : {{user.phone_no}}</center>
+                    <center class="">Address : {{user.address}}</center>
+                    <center class="">Pincode : {{user.pincode}}</center>
+                    <center><a href="{% url 'logout'%}"><button type="button"  class="btn btn-primary">Logout</button></a></center>
+              </div>              
             </div>
           </div>
         </div>

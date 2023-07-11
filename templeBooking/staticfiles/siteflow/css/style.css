@@ -27,7 +27,7 @@
   font-family: "Times New Roman";
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 37px;
   color: #000000;
 }
@@ -39,6 +39,10 @@
   color: #fff;
   margin: 0;
   transition: all 0.3s ease-in-out;
+}
+
+.tab-content{
+  margin-bottom: 150px;
 }
 .owl-nav button.owl-prev {
   left: 0;
@@ -95,7 +99,7 @@ a {
   font-family: "Times New Roman";
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 34px;
   line-height: 46px;
   color: #000000;
 }
@@ -121,7 +125,7 @@ a {
   font-family: "Tienne";
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 22px;
   line-height: 43px;
   text-decoration-line: underline;
   color: #000000;
@@ -130,7 +134,7 @@ a {
   font-family: "Times New Roman";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 23px;
   color: #000000;
 }
@@ -138,7 +142,7 @@ a {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 19px;
   color: rgba(53, 53, 53, 0.8);
 }
@@ -147,7 +151,7 @@ a {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
   color: #000000;
 }
@@ -168,7 +172,7 @@ a {
   font-family: "Times New Roman";
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 37px;
   color: #000000;
 }
@@ -196,7 +200,7 @@ a {
   font-family: "Times New Roman";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 28px;
   color: #646161;
 }
@@ -222,7 +226,7 @@ a {
   font-family: "Times New Roman";
   font-style: normal;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 24px;
   line-height: 41px;
   color: #000000;
 }
@@ -231,7 +235,7 @@ a {
   font-family: "Times New Roman";
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 34px;
   color: #000000;
 }
@@ -338,7 +342,7 @@ a {
 }
 .nav-pills {
   width: auto;
-  height: 129px;
+  height: 100px;
   background: #ffffff 0% 0% no-repeat padding-box !important;
   box-shadow: 4px 4px 12px #00000029 !important;
   border-radius: 20px;
@@ -346,11 +350,11 @@ a {
   justify-content: space-evenly !important;
 }
 .tabs.active {
-  width: 347px;
-  height: 87px;
+  width: 300px;
+  height: 80px;
   background: #ffcb52 0% 0% no-repeat padding-box !important;
   border-radius: 20px !important;
-  font: normal normal bold 40px/55px Open Sans !important;
+  font: normal normal bold 30px/45px Open Sans !important;
   letter-spacing: 0px !important;
   color: #191210 !important;
   opacity: 1 !important;
@@ -436,6 +440,9 @@ a {
 /* bookviewpage */
 
 /* Loginpage */
+.login-section,.registration-page{
+  margin-top: 106px;
+}
 .login .form-control,.password .form-control {
   border: none !important;
 }
@@ -514,6 +521,18 @@ a {
   color: #ffba19;
   opacity: 1;
 }
+
+.entermail {
+  font: normal normal normal 22px/30px Open Sans;
+}
+
+.backendmes{
+  text-align: center;
+    background: burlywood;
+    font-weight: 700;
+}
+
+
 .sign-in {
   width: 582px !important;
   height: 57px !important;

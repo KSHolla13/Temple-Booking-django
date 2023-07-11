@@ -90,7 +90,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'templeBooking.wsgi.application'
 
-
+AUTH_USER_MODEL = 'siteflow.user_table'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -135,6 +135,19 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL=FALSE
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "otp.alecta@gmail.com"
+EMAIL_HOST_PASSWORD = 'ezedropgfxsdzedp'
+
+RAZOR_KEY_ID = "rzp_test_MxVh5rP9g1uKFx"
+RAZOR_KEY_SECRET = "Tk6YmTwpNAvxtaLeaiJz8MND"
+
 
 
 MEDIA_URL = 'media/'
